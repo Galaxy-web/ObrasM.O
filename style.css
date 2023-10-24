@@ -197,23 +197,6 @@ nav a:hover {
     background-color: #FF8C00;
 }
 
-.paragrafos {
-    display: flex; /* Use flexbox para alinhar os parágrafos horizontalmente */
-    align-items: center;
-}
-
-.paragrafos p {
-    flex: 1; /* Distribui o espaço igualmente entre os parágrafos */
-    width: 100px; /* Largura de cada parágrafo */
-    height: 100px; /* Altura de cada parágrafo */
-    margin: 10px; /* Margens entre os parágrafos */
-    background-color: #44444480; /* Cor de fundo dos parágrafos */
-    color: #fff; /* Cor do texto dos parágrafos */
-    text-align: center; /* Centraliza o texto horizontalmente */
-    line-height: 100px; /* Centraliza o texto verticalmente */
-    font-size: 10px;
-}
-
 
 input, textarea {
     width: 100%;
