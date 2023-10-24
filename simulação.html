@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulação de Custos de Construção</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" type="image/png" href="m.o.png">
+</head>
+<body>
+    <header>
+    <h1>Simulação de Custos de Construção</h1>
+    <p>Esses valores podem alterar, mas serão uma base para você conseguir ter uma noção sobre como é feito o cálculo.</p>
+    <details>
+    <summary>Porque o valor pode alterar?</summary>
+    <br><span>Porquê a calculadora nos trás um valor aproximado com base nos itens adicionados. Para conseguir ter um valor exato, precisamos que um de nossos Contrutor vá até o local, para lhe passar um orçamento exato de valor</span>.</details>
+    </header>
+
+    <form id="simulacao-form">
+        <label for="tipo_obra">Tipo de Obra:</label>
+        <select name="tipo_obra" id="tipo_obra">
+            <option value="">Selecione um tipo de obra</option>
+            <option value="pre_pronta">Pré-Pronta</option>
+            <option value="desde_inicio">Desde o Início</option>
+            <option value="acabamento">Acabamento</option>
+        </select>
+
+        <label for="modelo_obra">Modelo de Obra:</label>
+        <select name="modelo_obra" id="modelo_obra">
+            <option value="">Selecione um modelo de obra</option>
+            <option value="casa_simples">Casa Simples</option>
+            <option value="sobrado">Sobrado</option>
+            <option value="acabamento_parede">Acabamento na Parede</option>
+            <option value="pisos">Pisos</option>
+            <option value="eletrica">Elétrica</option>
+        </select>
+
+        <label for="material_utilizado">Material Utilizado:</label>
+        <select name="material_utilizado" id="material_utilizado">
+            <option value="">Selecione um material utilizado</option>
+            <option value="madeira">Madeira</option>
+            <option value="tijolo">Tijolo</option>
+            <option value="massa_corrida">Massa Corrida</option>
+            <option value="cal_fino">Cal Fino</option>
+            <option value="ceramica">Cerâmica</option>
+            <option value="porcelanato">Porcelanato</option>
+            <option value="reboque">Rebôco</option>
+            <option value="troca_eletrica">Troca de Elétrica</option>
+        </select>
+
+        <label for="metros_quadrados">Metros Quadrados:</label>
+        <input type="text" name="metros_quadrados" id="metros_quadrados" placeholder="Informe os metros quadrados">
+
+        <input type="button" value="Simular" onclick="calcularCusto()">
+    </form>
+
+    <div id="resultado" class="resultado"></div>
+
+    <script>
+        function calcularCusto() {
+            var tipoObra = document.getElementById("tipo_obra").value;
+            var modeloObra = document.getElementById("modelo_obra").value;
+            var materialUtilizado = document.getElementById("material_utilizado").value;
+            var metrosQuadrados = parseFloat(document.getElementById("metros_quadrados").value);
+
+            var custoTipoObra = 0;
+            var custoModeloObra = 0;
+            var custoMaterial = 0;
+
+            if (tipoObra === "pre_pronta") {
+                custoTipoObra = 2000;
+            } else if (tipoObra === "desde_inicio") {
+                custoTipoObra = 10000;
+            } else if (tipoObra === "acabamento") {
+                custoTipoObra = 200;
+            }
+
+            if (modeloObra === "casa_simples") {
+                custoModeloObra = 10.00;
+            } else if (modeloObra === "sobrado") {
+                custoModeloObra = 35.00;
+            } else if (modeloObra === "acabamento_parede" || modeloObra === "pisos" || modeloObra === "reboque") {
+                custoModeloObra = 15.00; // Custo para Acabamento na Parede, Pisos e Rebôco
+            } else if (modeloObra === "eletrica") {
+                custoModeloObra = 25.00; // Custo para Elétrica
+            }
+
+            if (materialUtilizado === "madeira") {
+                custoMaterial = 10.00;
+            } else if (materialUtilizado === "tijolo") {
+                custoMaterial = 25.00;
+            } else if (materialUtilizado === "massa_corrida" || materialUtilizado === "cal_fino" || materialUtilizado === "ceramica" || materialUtilizado === "porcelanato") {
+                custoMaterial = 15.00; // Custo para Piso, Cal Fino, Cerâmica e Porcelanato
+            } else if (materialUtilizado === "reboque") {
+                custoMaterial = 15.00; // Custo para Rebôco
+            } else if (materialUtilizado === "troca_eletrica") {
+                custoMaterial = 30.00; // Custo para Troca de Elétrica
+            }
+
+            var custoTotal = custoTipoObra + custoModeloObra * custoMaterial * metrosQuadrados;
+
+            var resultado = "Custo Total: R$ " + custoTotal.toFixed(2);
+
+            document.getElementById("resultado").textContent = resultado;
+            document.getElementById("resultado").style.display = "block";
+        }
+    </script>
+
+    <style>
+        .resultado {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 15%;
+            display: none;
+        }
+    </style>
+</body>
+</html>

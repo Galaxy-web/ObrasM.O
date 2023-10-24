@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Dinâmico</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Exemplo de CSS Dinâmico</h1>
+    <button id="alterar-estilo">Alterar Estilo</button>
+    <div id="elemento" class="elemento">Este é um elemento</div>
+    <script src="script.js"></script>
+</body>
+</html>

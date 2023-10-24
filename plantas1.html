@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas de Casas por Construtora</title>
+    <link rel="stylesheet" href="plantas1.css">
+    <link rel="icon" type="image/png" href="m.o.png">
+</head>
+<body>
+    <header>
+        <h1>Plantas de Casas por Construtora</h1>
+    </header>
+
+    <main>
+        <div class="construtora">
+            <h2>Construtora A</h2>
+            <div class="planta">
+                <img src="construtoraA_planta1.jpg" alt="Planta de Casa 1 da Construtora A">
+                <button class="saiba-mais">Saiba mais</button>
+                <div class="overlay">
+                    <div class="popup">
+                        <h3>Planta de Casa 1</h3>
+                        <img src="construtoraA_planta1.jpg" alt="Planta de Casa 1 da Construtora A">
+                        <p>Descrição da Planta de Casa 1 e informações adicionais.</p>
+                        <button class="fechar">Fechar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="planta">
+                <img src="construtoraA_planta2.jpg" alt="Planta de Casa 2 da Construtora A">
+                <button class="saiba-mais">Saiba mais</button>
+                <div class="overlay">
+                    <div class="popup">
+                        <h3>Planta de Casa 2</h3>
+                        <img src="construtoraA_planta2.jpg" alt="Planta de Casa 2 da Construtora A">
+                        <p>Descrição da Planta de Casa 2 e informações adicionais.</p>
+                        <button class="fechar">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="construtora">
+            <h2>Construtora B</h2>
+            <div class="planta">
+                <img src="construtoraB_planta1.jpg" alt="Planta de Casa 1 da Construtora B">
+                <button class="saiba-mais">Saiba mais</button>
+                <div class="overlay">
+                    <div class="popup">
+                        <h3>Planta de Casa 1</h3>
+                        <img src="construtoraB_planta1.jpg" alt="Planta de Casa 1 da Construtora B">
+                        <p>Descrição da Planta de Casa 1 e informações adicionais.</p>
+                        <button class="fechar">Fechar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="planta">
+                <img src="construtoraB_planta2.jpg" alt="Planta de Casa 2 da Construtora B">
+                <button class="saiba-mais">Saiba mais</button>
+                <div class="overlay">
+                    <div class="popup">
+                        <h3>Planta de Casa 2</h3>
+                        <img src="construtoraB_planta2.jpg" alt="Planta de Casa 2 da Construtora B">
+                        <p>Descrição da Planta de Casa 2 e informações adicionais.</p>
+                        <button class="fechar">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adicione mais construtoras e plantas conforme necessário -->
+    </main>
+
+    <script>
+        const saibaMaisButtons = document.querySelectorAll('.saiba-mais');
+        const overlayElements = document.querySelectorAll('.overlay');
+        const fecharButtons = document.querySelectorAll('.fechar');
+
+        saibaMaisButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                overlayElements[index].style.display = 'block';
+            });
+
+            fecharButtons[index].addEventListener('click', () => {
+                overlayElements[index].style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

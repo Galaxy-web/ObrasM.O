@@ -1,0 +1,385 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais da página */
+body {
+    font-family: 'Arial', sans-serif;
+    animation: fadeIn 1s ease-in;
+    background: linear-gradient(90deg, #4e54c8, #8f94fb, #4e54c8);
+    background-size: 600% 600%;
+    animation: backgroundAnimation 10s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+.header-title {
+    font-size: 2rem;
+}
+
+.header-subtitle {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos das sections */
+.project {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Borda arredondada */
+    margin: 20px 0;
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    animation: fadeIn 1s ease-in;
+    position: relative;
+}
+
+/* Gradiente de fundo nas sections */
+.project::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+/* Efeito degradê e aumento ao passar o mouse */
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: #f7f7f7;
+}
+
+.project:hover::before {
+    opacity: 1;
+}
+
+.project h2 {
+    font-size: 1.8rem; /* Tamanho aumentado */
+    margin-bottom: 10px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.2s;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.project h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #007bff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.project h2:hover {
+    color: #0056b3;
+}
+
+.project h2:hover::after {
+    transform: scaleX(1);
+}
+
+.image-container {
+    display: flex;
+    overflow: hidden;
+}
+
+.image {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Botões personalizados */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s, color 0.4s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    background-color: #0056b3;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Informações e upload */
+.highlight-section {
+    background: linear-gradient(135deg, #007bff, #00ffcc); /* Gradiente sutil */
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.info-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.highlight-section h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.highlight-section p {
+    font-size: 1.3rem;
+    margin: 20px 0;
+}
+
+.btn-primary {
+    background-color: #fff;
+    color: #007bff;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Rodapé estilizado */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Estilos de animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilização da área de vídeo */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção do vídeo */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    background: #000; /* Cor de fundo */
+    color: #fff;
+    text-align: center;
+    border: 5px solid #007bff; /* Adiciona uma borda */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Adiciona uma sombra */
+    border-radius: 10px; /* Arredonda as bordas */
+}
+
+/* Estilização da sobreposição */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Sobreposição semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#play-button {
+    background: url('seu_icone_de_play.png') center center no-repeat; /* Use um ícone de play personalizado */
+    width: 100px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+#play-button:hover {
+    transform: scale(1.2); /* Efeito de escala no hover */
+}
+
+.video h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Gradiente neon piscante para o destaque do mês */
+.neon-background {
+    background: linear-gradient(45deg, #f06, #3f0, #06f, #f06);
+    background-size: 400% 400%;
+    animation: neonGlow 6s linear infinite, textGlow 2s linear infinite;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes neonGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Estilo base para os botões de compartilhamento */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Efeito de hover */
+a:hover {
+    background-color: #0056b3;
+}
+
+.testimonial-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.testimonial {
+    flex: 0 0 100%;
+    text-align: center;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    margin-right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s;
+}
+
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+}
+
+.testimonial h3 {
+    font-size: 1rem;
+    color: #007bff;
+}
+
+/* Estilos para o carrossel */
+.testimonial-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
